@@ -1,4 +1,15 @@
 {
+
+    "version": 2,
+    "builds": [
+        {
+          "src": "./*",
+          "use": "@vercel/node",
+          "config": {
+            "includeFiles": ["src/car.json"]
+          }
+        }
+      ],
     "rewrites": [{
         "source": "/(.*)", 
         "destination": "/index.html"
