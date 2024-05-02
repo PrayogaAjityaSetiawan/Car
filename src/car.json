@@ -1,68 +1,20 @@
 {
-    "cars": [
-        {
-            "id": 1,
-            "name": "Honda CBR",
-            "brand": "Honda",
-            "description": "Honda CBR adalah serangkaian sepeda motor sport. Seri CBR diluncurkan pada tahun 1987. Model-model Honda CBR adalah sepeda motor berorientasi olahraga. Mereka dikenal karena performa dan ketangkasannya.",
-            "location": "Jakarta",
-            "image": "./image/1.jpg"
-        },
-        {
-            "id": 2,
-            "name": "Pajero Sport",
-            "brand": "Mitsubishi",
-            "description": "Mitsubishi Pajero Sport adalah SUV mid-size yang diproduksi oleh produsen Jepang Mitsubishi Motors. Ini adalah kendaraan yang serbaguna dan dapat diandalkan, cocok untuk berkendara di kota maupun petualangan off-road.",
-            "location": "Jakarta",
-            "image": "./image/2.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Toyota Camry",
-            "brand": "Toyota",
-            "description": "Toyota Camry adalah mobil mid-size yang diproduksi oleh Toyota. Ini telah menjadi salah satu mobil terlaris di Amerika Serikat selama bertahun-tahun. Camry dikenal karena keandalannya, kenyamanan, dan efisiensi bahan bakarnya.",
-            "location": "Jakarta",
-            "image": "./image/3.jpg"
-        },
-        {
-            "id": 4,
-            "name": "BMW Seri 5",
-            "brand": "BMW",
-            "description": "BMW Seri 5 adalah mobil eksekutif yang diproduksi oleh BMW sejak tahun 1972. Tersedia dalam gaya sedan dan touring. Seri 5 dikenal karena kemewahan, performa, dan fitur teknologi canggihnya.",
-            "location": "Jakarta",
-            "image": "./image/4.jpg"
-        },
-        {
-            "id": 5,
-            "name": "Mercedes-Benz E-Class",
-            "brand": "Mercedes-Benz",
-            "description": "Mercedes-Benz E-Class adalah rangkaian mobil eksekutif yang diproduksi oleh Mercedes-Benz sejak tahun 1953. Tersedia dalam gaya sedan, coupe, convertible, dan wagon. E-Class dikenal karena interior mewahnya, teknologi canggih, dan kenyamanan superior.",
-            "location": "Jakarta",
-            "image": "./image/5.jpg"
-        },
-        {
-            "id": 6,
-            "name": "Audi A4",
-            "brand": "Audi",
-            "description": "Audi A4 adalah mobil eksekutif kompak yang diproduksi oleh produsen otomotif Jerman Audi sejak tahun 1994. Tersedia dalam gaya sedan, wagon, dan convertible. A4 dikenal karena desainnya yang stylish, interior yang rapi, dan pengalaman berkendara yang dinamis.",
-            "location": "Jakarta",
-            "image": "./image/6.jpg"
-        },
-        {
-            "id": 7,
-            "name": "Lamborghini Huracan",
-            "brand": "Lamborghini",
-            "description": "Lamborghini Huracan adalah mobil sport yang diproduksi oleh produsen otomotif Italia Lamborghini. Tersedia dalam gaya coupe dan convertible. Huracan dikenal karena mesin yang kuat, desain agresif, dan performa yang mempesona.",
-            "location": "Jakarta",
-            "image": "./image/7.jpg"
-        },
-        {
-            "id": 8,
-            "name": "Ferrari 488 GTB",
-            "brand": "Ferrari",
-            "description": "Ferrari 488 GTB adalah mobil sport mid-engine yang diproduksi oleh produsen otomotif Italia Ferrari. Ditenagai oleh mesin V8 turbocharged, memberikan performa yang mempesona. 488 GTB dikenal karena desainnya yang menakjubkan, penanganan yang presisi, dan akselerasi yang cepat.",
-            "location": "Jakarta",
-            "image": "./image/8.jpg"
-        }
-    ]
+  "cars": [
+    {
+      "id": "d802",
+      "title": "toyota",
+      "image": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "brand": "Honda",
+      "description": "kdkjdhsgfftwfdwfyd",
+      "location": "jakarta"
+    },
+    {
+      "id": "73d4",
+      "title": "toyota",
+      "image": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "brand": "Honda",
+      "description": "djjjjjjjjjjjj",
+      "location": "jakarta"
+    }
+  ]
 }

@@ -1,61 +1,92 @@
 import { useState } from "react";
-import { toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const AddCar = () => {
     const [title, setTitle] = useState('');
-    const [gambar, setGambar] = useState('');
+    const [image, setImage] = useState('');
     const [brand, setBrand] = useState('Honda');
     const [description, setDescription] = useState('');
-    const [lokasi, setLokasi] = useState('')
-    const submitForm = (e) => {
-            e.preventDefault();
+    const [location, setLocation] = useState('');
 
-            const newCar = {
-                title,
-                gambar,
-                brand,
-                description,
-                lokasi
+
+    const handleImageChange = (e) => {
+        setImage(e.target.value);
+    };
+    const submitForm = async (e) => {
+        e.preventDefault();
+        const newCar = {
+            title,
+            image,
+            brand,
+            description,
+            location
+        };
+
+        try {
+            const response = await fetch('http://localhost:5000/cars', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newCar),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to add car');
             }
 
-            console.log(newCar)
-            toast.success('Job Added Successfully');
+            // Mereset form ketika berhasil Submit
+            setTitle('');
+            setImage('');
+            setBrand('Honda');
+            setDescription('');
+            setLocation('');
 
-    }
+            // Show success toast
+            toast.success('Berhasil Menambahkan Mobil');
+        } catch (error) {
+            console.error('Error adding car:', error);
+            // Show error toast
+            toast.error('Failed to add car');
+        }
+    };
+
     return (
         <section>
             <div className="w-full py-20">
                 <div className="max-w-2xl mx-auto bg-[#EEEEEE] py-9 rounded-md shadow-md">
-                    <form onSubmit={submitForm} >
+                    <form onSubmit={submitForm}>
                         <h1 className="text-center text-2xl font-bold">Tambah Car</h1>
                         <div className="flex flex-col px-4 mb-2">
                             <label htmlFor="title">Mobil</label>
-                            <input 
-                                id="title" 
+                            <input
+                                required
+                                id="title"
                                 name="title"
-                                type="file" 
+                                type="text"
                                 value={title}
-                                onChange={(e) => setTitle (e.target.value)}
+                                onChange={(e) => setTitle(e.target.value)}
                                 placeholder="Masukkan tipe Mobil"
                                 className="border rounded-md py-2 px-3"
                             />
                         </div>
                         <div className="flex flex-col px-4 mb-2">
-                            <label htmlFor="merek">Merek</label>
-                            <input 
-                                id="merek" 
-                                name="merek"
-                                type="text" 
-                                value={gambar}
-                                onChange={(e) => setGambar(e.target.value)}
-                                placeholder="Masukkan Merek Mobil"
+                            <label htmlFor="image">Gambar</label>
+                            <input
+                                required
+                                id="image"
+                                name="image"
+                                type="text"
+                                value={image}
+                                onChange={handleImageChange}
+                                placeholder="Masukkan URL Gambar"
                                 className="border rounded-md py-2 px-3"
                             />
                         </div>
                         <div className="flex flex-col px-4 mb-2">
-                            <label htmlFor="brand">Brand</label>
-                            <select 
-                                id="brand" 
+                            <label htmlFor="brand">Merek</label>
+                            <select
+                                id="brand"
                                 name="brand"
                                 value={brand}
                                 onChange={(e) => setBrand(e.target.value)}
@@ -63,30 +94,31 @@ const AddCar = () => {
                             >
                                 <option value="Toyota">Toyota</option>
                                 <option value="Honda">Honda</option>
-                                <option value="Suzuku">Suzuki</option>
+                                <option value="Suzuki">Suzuki</option>
                             </select>
-
                         </div>
                         <div className="flex flex-col px-4 mb-2">
-                            <label htmlFor="description">Merek</label>
-                            <textarea 
-                                id="description" 
-                                name="tescription"
+                            <label htmlFor="description">Deskripsi</label>
+                            <textarea
+                                required
+                                id="description"
+                                name="description"
                                 rows='4'
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
-                                placeholder="Masukkan Merek Mobil"
+                                placeholder="Masukkan Deskripsi Mobil"
                                 className="border rounded-md py-2 px-3"
-                                ></textarea>
+                            ></textarea>
                         </div>
                         <div className="flex flex-col px-4 mb-2">
-                            <label htmlFor="lokasi">Lokasi</label>
-                            <input 
-                                id="lokasi" 
-                                name="lokasi"
-                                type="text" 
-                                value={lokasi}
-                                onChange={(e) => setLokasi(e.target.value)}
+                            <label htmlFor="location">Lokasi</label>
+                            <input
+                                required
+                                id="location"
+                                name="location"
+                                type="text"
+                                value={location}
+                                onChange={(e) => setLocation(e.target.value)}
                                 placeholder="Masukkan lokasi mobil"
                                 className="border rounded-md py-2 px-3"
                             />
@@ -102,4 +134,5 @@ const AddCar = () => {
         </section>
     )
 }
+
 export default AddCar;

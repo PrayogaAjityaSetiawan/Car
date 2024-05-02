@@ -27,10 +27,10 @@ const Cards = ({car}) => {
                 </div>
                 <div className='p-3'>
                     <div className='mb-2 flex justify-between items-center'>
-                        <h1 className='font-bold'>{car.name}</h1>
+                        <h1 className='font-bold capitalize'>{car.title}</h1>
                         <span>{car.brand}</span>
                     </div>
-                    <div className='mb-2 text-sm text-gray-500'>{car?.description.substring(0, 70)}{car.description.length > 100 ? "..." : ""}</div>
+                    <span className='mb-2 text-sm text-gray-500'>{car?.description.substring(0, 30)}{car.description.length > 100 ? "..." : ""}</span>
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center gap-1'>
                             <FaLocationDot size={20} className='text-red-500' />

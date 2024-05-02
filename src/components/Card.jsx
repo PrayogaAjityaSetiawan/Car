@@ -4,10 +4,11 @@ import Cards from './Cards'
 
  const Card = () => {
     const [cars, setCars] = useState([])
+    const URL = 'http://localhost:5000/cars'
 
     useEffect(() => {
         const fetchCar = async () => {
-            const response = await fetch('http://localhost:5000/cars')
+            const response = await fetch(URL)
             const data = await response.json()
             setCars(data)
             console.log(data)
@@ -15,7 +16,7 @@ import Cards from './Cards'
         fetchCar()
     },[])
 return (
-    <section className=''>
+    <section>
         <div className=' px-3 grid md:grid-cols-4 gap-5'>
             { cars.map((car) => (
                <Cards key={car.id} car={car} />
