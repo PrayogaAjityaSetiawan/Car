@@ -8,7 +8,7 @@ const Cards = ({car}) => {
     const [likes, setLikes] = useState({});
 
 
-    // Handle Like Card
+    // Handle Like Car
     const toggleLike = (carsId) => {
         console.log(carsId)
         setLikes(prevLikes => ({
@@ -28,15 +28,17 @@ const Cards = ({car}) => {
                 <div className='p-3'>
                     <div className='mb-2 flex justify-between items-center'>
                         <h1 className='font-bold capitalize'>{car.title}</h1>
-                        <span>{car.brand}</span>
+                        <span className='uppercase'>{car.brand}</span>
                     </div>
-                    <span className='mb-2 text-sm text-gray-500'>{car?.description.substring(0, 30)}{car.description.length > 100 ? "..." : ""}</span>
+                    <div>
+                        <span className='b-2 text-sm text-gray-500'>{car?.description.substring(0, 70)}{car.description.legth > 100 ? "...": ""}</span>
+                    </div>
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center gap-1'>
                             <FaLocationDot size={20} className='text-red-500' />
                             <h2 className='text-md'>{car?.location}</h2>
                         </div>
-                            <Link className='bg-[#627254] py-1 px-2 rounded-md text-white capitalize font-medium' to={`/car/${car.id}`}>read more</Link>
+                            <Link className='bg-[#627254] py-1 px-2 rounded-md text-white capitalize font-bold' to={`/car/${car.id}`}>read more</Link>
                     </div>
                 </div>
             </div>

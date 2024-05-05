@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from 'react-toastify';
+import login from '../../public/image/login.jpg'
 
 const AddCar = () => {
     const [title, setTitle] = useState('');
@@ -53,10 +54,14 @@ const AddCar = () => {
 
     return (
         <section>
-            <div className="w-full py-20">
-                <div className="max-w-2xl mx-auto bg-[#EEEEEE] py-9 rounded-md shadow-md">
+            <div className="md:flex bg-slate-400 p-12 font-poppins ">
+                <div  className="hidden md:block md:w-1/2">
+                    <img className="bg-center bg-cover h-full" src={login} alt="" />
+                </div>
+                <div className="w-full md:w-1/2">
+                <div className="max-w-2xl mx-auto bg-[#EEEEEE]   py-5">
                     <form onSubmit={submitForm}>
-                        <h1 className="text-center text-2xl font-bold">Tambah Car</h1>
+                        <h1  className="text-center text-2xl font-bold">Tambah Car</h1>
                         <div className="flex flex-col px-4 mb-2">
                             <label htmlFor="title">Mobil</label>
                             <input
@@ -130,6 +135,7 @@ const AddCar = () => {
                         </div>
                     </form>
                 </div>
+            </div>
             </div>
         </section>
     )
